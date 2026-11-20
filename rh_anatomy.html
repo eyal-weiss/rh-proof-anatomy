@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anatomy of the claimed RH proof</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: one reading column; branch bars compare Lean measurement with the outline estimate; the archive facts follow; the timeline and evidence tables last. */
+:root{
+  --surface:#fcfcfb; --panel:#f3f3f0; --ink:#0b0b0b; --ink-2:#52514e; --ink-3:#7b7a75; --rule:#dddcd6;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#6250d6; --s8:#e34948;
+  --font-display:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --surface:#1a1a19; --panel:#242422; --ink:#f0efec; --ink-2:#c3c2b7; --ink-3:#96958c; --rule:#3a3a37;
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#0ca30c; --s7:#9085e9; --s8:#e66767;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --surface:#1a1a19; --panel:#242422; --ink:#f0efec; --ink-2:#c3c2b7; --ink-3:#96958c; --rule:#3a3a37;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#0ca30c; --s7:#9085e9; --s8:#e66767;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--surface);color:var(--ink);font:400 16px/1.55 var(--font-body)}
+main{max-width:1000px;margin:0 auto;padding-block:40px 72px;padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px));display:flex;flex-direction:column;gap:44px}
+h1,h2{font-family:var(--font-display);font-weight:600;text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(28px,4.4vw,40px);line-height:1.12}
+h2{font-size:23px;line-height:1.2}
+h3{font:500 16px/1.3 var(--font-body);margin:8px 0 0}
+p{margin:0;max-width:68ch}
+a{color:inherit;text-underline-offset:3px}
+a:focus-visible,summary:focus-visible,g:focus-visible,.bar:focus-visible{outline:2px solid var(--s1);outline-offset:2px}
+code{font-size:.92em}
+.lede{color:var(--ink-2);font-size:17px}
+header{display:flex;flex-direction:column;gap:14px}
+.status{border-left:3px solid var(--ink);background:var(--panel);padding:12px 16px;font-size:14.5px;color:var(--ink-2);max-width:none}
+.status b{color:var(--ink);font-weight:600}
+section{display:flex;flex-direction:column;gap:16px}
+.sub{color:var(--ink-2);font-size:15px}
+.num{font-variant-numeric:tabular-nums}
+
+/* bars: solid = measured in the Lean code, hollow = outline estimate */
+.bars{display:flex;flex-direction:column;gap:16px;margin-top:4px}
+.bar{display:grid;grid-template-columns:minmax(220px,340px) 1fr;gap:6px 20px;align-items:center;outline:none}
+.bar .name{font-weight:500;font-size:15px;line-height:1.3}
+.bar .tech{grid-column:1;color:var(--ink-3);font-size:13px;line-height:1.35}
+.bar .track{grid-row:1 / span 2;grid-column:2;display:flex;flex-direction:column;gap:5px;min-width:0}
+.bar .ln{display:flex;align-items:center;gap:8px;min-width:0}
+.bar .fill{height:16px;border-radius:0 4px 4px 0;min-width:2px}
+.bar .fill.est{height:10px;background:transparent;border:1.5px solid;border-left:none}
+.bar .val{font-size:14px;font-weight:500;font-variant-numeric:tabular-nums;white-space:nowrap}
+.bar .val.est{font-size:13px;font-weight:400;color:var(--ink-2)}
+@media (max-width:640px){
+  .bar{grid-template-columns:1fr}
+  .bar .track{grid-row:auto;grid-column:1}
+}
+.bar .ln.est-ln{position:relative}
+.bar .rng{position:absolute;top:50%;height:0;border-top:1.5px solid var(--ink-3);pointer-events:none}
+.bar .rng::before,.bar .rng::after{content:"";position:absolute;top:-5px;height:9px;border-left:1.5px solid var(--ink-3)}
+.bar .rng::before{left:0}
+.bar .rng::after{right:0}
+.rngsw{display:inline-block;width:20px;height:9px;position:relative;flex:none}
+.rngsw::before{content:"";position:absolute;left:0;right:0;top:4px;border-top:1.5px solid var(--ink-3)}
+.rngsw::after{content:"";position:absolute;left:0;right:0;top:0;height:9px;border-left:1.5px solid var(--ink-3);border-right:1.5px solid var(--ink-3)}
+.bars.compact{gap:9px}
+.bars.compact .bar .track{grid-row:1}
+.bar .subname{display:block;color:var(--ink-3);font-size:13px;font-weight:400}
+.fill.hatch{background:repeating-linear-gradient(135deg,var(--ink-2) 0 2px,transparent 2px 6px);box-shadow:inset 0 0 0 1px var(--ink-2)}
+.sw{display:inline-block;width:20px;height:10px;border-radius:0 3px 3px 0;background:var(--ink-2);flex:none}
+.sw.est{background:transparent;border:1.5px solid var(--ink-2);border-left:none}
+.note{font-size:14px;color:var(--ink-2)}
+
+/* archive facts */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.stat{background:var(--panel);border-radius:6px;padding:12px 14px}
+.stat b{display:block;font:600 24px/1.15 var(--font-display);font-variant-numeric:tabular-nums}
+.stat span{font-size:13px;color:var(--ink-2)}
+.path{font-size:13px}
+
+/* timeline */
+.scroll{overflow-x:auto}
+.scroll svg{display:block;min-width:780px;width:100%;height:auto}
+svg text{font-family:var(--font-body);fill:var(--ink)}
+svg text.faint{fill:var(--ink-3)}
+.grid{stroke:var(--rule);stroke-width:1}
+.tick{font-size:11.5px;fill:var(--ink-3)}
+.yr{font-weight:600;font-variant-numeric:tabular-nums}
+.br{fill:var(--ink-3)}
+.row .hit{fill:transparent}
+.row:hover .hit,.row:focus .hit{fill:var(--panel)}
+.row{outline:none}
+.key{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--ink-2)}
+.key span{display:inline-flex;align-items:center;gap:6px}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block;flex:none}
+.dot.hollow{background:transparent;border:2px solid var(--ink-2)}
+.dot.dia{border-radius:0;transform:rotate(45deg);background:var(--ink);width:8px;height:8px}
+.dot.sq{border-radius:2px;background:var(--ink-2)}
+.dot.faded{background:var(--ink-2);opacity:.35}
+#tip{position:fixed;z-index:5;pointer-events:none;max-width:320px;background:var(--surface);color:var(--ink);border:1px solid var(--rule);border-radius:6px;padding:9px 11px;font-size:13px;line-height:1.4;box-shadow:0 4px 18px rgba(0,0,0,.14);display:none}
+#tip b{display:block;font-weight:600}
+#tip i{font-style:normal;color:var(--ink-2);display:block}
+
+/* tables */
+details{border-top:1px solid var(--rule);padding-top:10px}
+summary{cursor:pointer;font-size:14px;color:var(--ink-2)}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:8px}
+th,td{text-align:left;padding:7px 12px 7px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-weight:500;color:var(--ink-3);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+.chip{display:inline-flex;align-items:center;gap:5px;margin:0 10px 2px 0;white-space:nowrap;color:var(--ink-2)}
+ul.notes,ol.notes{margin:0;padding-left:18px;max-width:72ch;color:var(--ink-2);font-size:14.5px;display:flex;flex-direction:column;gap:6px}
+footer{font-size:13px;color:var(--ink-3);display:flex;flex-direction:column;gap:6px}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1>Anatomy of the claimed proof of the Riemann Hypothesis</h1>
+  <p class="lede">Which parts of mathematics Levent Alpöge's Claude-assisted argument draws on, and how old each ingredient is. A crude first-order map, built from the 20-step outline in his four-page note and from a text scan of the Lean code released with it.</p>
+  <p class="status"><b>Read this as a map of a claim.</b> The proof was announced on 20 November 2026 and nobody outside has checked it yet. Two kinds of numbers appear below. Importance weights are judgment calls: a first estimate from the note's outline, then a re-estimate by Claude Fable 5.2 that also read the Lean findings, with a range of several points either way. Lean weights are measured by scanning the 175,187-file Lean archive as text, without building it, through name patterns that are themselves judgment calls. A few technique identifications are guesses, marked with hollow dots.</p>
+</header>
+
+<section aria-labelledby="h-br">
+  <h2 id="h-br">Branches of mathematics: share of the Lean code against estimated importance</h2>
+  <p class="sub">Solid bars: share of the Lean code's lines that each branch accounts for, judged by the names used in each file. Hollow bars: estimated importance in the argument, from a re-estimate that combined the note's outline with the Lean findings; the whisker shows its range. The first estimate, from the outline alone, is in the table below. <span id="lead"></span></p>
+  <div class="key"><span><i class="sw"></i>Lean code, measured</span><span><i class="sw est"></i>Importance, estimated</span><span><i class="rngsw"></i>Range of the estimate</span></div>
+  <div class="bars" id="bars"></div>
+  <p class="note" id="unattr"></p>
+  <details>
+    <summary>How the Lean shares were measured, with three alternative methods as checks</summary>
+    <ol class="notes" style="margin-top:10px">
+      <li>Every <code>.lean</code> file was read as text. Import lines and folder names inside qualified names were removed first; folder labels otherwise inflated some counts about sevenfold.</li>
+      <li>47 name patterns, each tied to one branch, were counted. Examples: Mathlib's <code>Scheme</code> and <code>IsCMField</code>, theta lifts, Siegel–Weil, Hecke, ℤ-lattices, Fourier and Haar, étale. A pattern's count in a file is damped to log(1 + n), so one name repeated hundreds of times cannot take over a file.</li>
+      <li>Each file's code lines were split among branches in proportion to those damped counts, then summed over all files.</li>
+      <li>Files with no matching name at all, 23% of the lines, take the branch mix of the other files in their folder. That is the version in the bars.</li>
+      <li>Checks in the table: leaving those files out; giving each of them the mix of the files that import it, since a helper serves whatever uses it; and giving each of the 793 folders wholly to its dominant branch. All agree on the top three branches and on the near-absence of analytic number theory and combinatorics. The folder-majority method disagrees on the middle branches, so treat anything under about 7% as rough.</li>
+    </ol>
+    <div class="tw"><table id="mtable"></table></div>
+  </details>
+  <h3>Infrastructure share, shown separately</h3>
+  <p class="sub">This second view exists only to show how much of the code is generic infrastructure. The 23% of lines in helper files with no branch-specific name get their own bar instead of being shared out, and every percentage is of all code lines.</p>
+  <div class="bars compact" id="infra"></div>
+  <p class="note">Read the infrastructure bar as a floor. Files that do contain branch-specific names also contain plenty of generic algebra, and this view counts that toward their branch.</p>
+</section>
+
+<section aria-labelledby="h-lean">
+  <h2 id="h-lean">Inside the Lean archive</h2>
+  <p class="sub">The 14-part archive was extracted and read as text. It was not built, so nothing here checks the proof.</p>
+  <div class="stats" id="stats"></div>
+  <p>After comments and strings are stripped, the code contains no <code>sorry</code>, <code>admit</code>, axiom declaration, <code>opaque</code>, <code>native_decide</code> or <code>implemented_by</code>. That is necessary for a complete proof but does not show one: only a full build followed by <code>#print axioms</code>, and ideally lean4checker or comparator, can. The top file proves <code>riemannHypothesis</code> and four Dirichlet L-function statements, stated with Mathlib's own <code>riemannZeta</code> and <code>DirichletCharacter.LFunction</code>.</p>
+  <h3>The 12 largest folders hold <span id="f12"></span> of the code</h3>
+  <div class="tw"><table id="ftable"></table></div>
+  <ul class="notes">
+    <li>Nearly half the code (47%) sits under <code>Development/AbelianVarietyTheory</code>. The note's outline does not present abelian varieties as an ingredient beyond CM curves. Folder names alone mislead: <code>IwasawaDecomposition</code> is the Lie-group decomposition G = KAN, not Iwasawa theory. That is why the shares above come from names inside the code rather than from folders.</li>
+    <li>136,003 files import all of Mathlib with a single line, so imports say little about which areas a file uses. The files that import specific Mathlib modules mostly pull in ring theory, analysis, number theory and linear algebra. Those are foundations, not the high-level branches charted here.</li>
+    <li>Every file is reachable by imports from the main theorem. The scan therefore cannot tell which code the final proof actually depends on; that needs a build and a declaration-level dependency trace.</li>
+    <li>1,070 files sit in folders called <code>PublishedTheorems</code>, named after classical results such as Jacquet–Shalika, Poitou–Tate, Ferrero–Washington, Kisin and Clozel's purity. They contain 4,993 theorem declarations. Names alone cannot show whether these prove the results in full or only the cases needed.</li>
+  </ul>
+</section>
+
+<section aria-labelledby="h-tl">
+  <h2 id="h-tl">When each ingredient was invented</h2>
+  <p class="sub" id="tlsub"></p>
+  <div class="key" id="key"></div>
+  <div class="scroll"><svg id="tl" role="img" aria-label="Timeline of techniques by year of origin. The same data is in the table below."></svg></div>
+  <details>
+    <summary>Show the timeline as a table</summary>
+    <div class="tw"><table id="tltable"></table></div>
+  </details>
+</section>
+
+<section aria-labelledby="h-st">
+  <h2 id="h-st">The outline steps behind the importance estimates</h2>
+  <p class="sub">Each step of the note's outline, paraphrased, with the branches the first estimate assigned it. Step weight is 2 for the core mechanism, 0.5 where the note leaves the role unclear or expects the step to be removable, and 1 otherwise. Dates are when the note says each idea arrived. The last column shows how the re-estimate changed each step after reading the Lean findings. The re-estimate also adds a 21st step the outline never mentions.</p>
+  <div class="tw"><table id="steps"></table></div>
+</section>
+
+<section aria-labelledby="h-cv">
+  <h2 id="h-cv">What this map leaves out</h2>
+  <ul class="notes">
+    <li>The two weightings measure different things. The importance estimates weigh an idea by its role in the argument; the Lean weights measure how much code each branch takes. Foundations that Mathlib lacks, such as abelian schemes and hermitian lattices, need a great deal of code, while the RH-specific argument built on them may be short.</li>
+    <li>The Lean shares rest on name patterns. Some names are ambiguous: Mathlib's <code>Lattice</code> is an order lattice, and <code>IsTheta</code> is an asymptotic bound, not a theta function. A technique can also be formalized under names no pattern catches. A faded timeline row means the name is rare in the code, not that the idea is absent.</li>
+    <li>The importance re-estimate is an AI judgment by Claude Fable 5.2, made from the note and 15 Lean files on the main-theorem chain. It matched Lean statements to outline steps by their shape, since many names are opaque. It could not tell whether outline steps 3 to 7 survive in the final formal argument, which is the main reason for the wide range on analytic number theory.</li>
+    <li>The outline is a compressed sketch. The author says his summaries of Claude's parts are paraphrases that may be inaccurate.</li>
+    <li>Four names in the note are ambiguous. "Weyl" is read here as the character and dimension formulas, "Behrend" as the 1946 progression-free set construction, "Turán" as the power-sum method, and "Mehta" as the Mehta–Dyson integral.</li>
+    <li>Names that appear only as background in the note's footnotes are not plotted: Bałaban's multiscale induction, Borger's approach to the field with one element, and "Gabber's hypersurface" from one of Katz's arguments, which could not be dated.</li>
+    <li>Years mark the first appearance of an idea. Most of these tools kept developing for decades afterwards, and the form used in the proof is usually a later one.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>Sources: <a href="https://alpo.ge/remark.pdf">Alpöge's note</a> · Lean archive at alpo.ge (<code>lean.tar.gz.part01</code> to <code>part14</code>) · <a href="https://en.wikipedia.org/wiki/Levent_Alp%C3%B6ge">Wikipedia on Levent Alpöge</a> · <a href="https://www.unite.ai/levent-alpoges-unverified-riemann-claim-puts-claudes-lean-code-in-focus/">Unite.AI on the unverified status</a>. Origin years are from the standard literature.</p>
+  <p>Lean measurements: <code>lean_census.py</code> (file census and trust counts), <code>branch_scan.py</code>, <code>weights.py</code> and <code>import_fill.py</code> (branch shares) and <code>technique_hits.py</code> (timeline counts), run 20 November 2026. Importance re-estimate: Claude Fable 5.2, the same day. Code and data: <a href="https://github.com/eyal-weiss/rh-proof-anatomy">github.com/eyal-weiss/rh-proof-anatomy</a>.</p>
+</footer>
+</main>
+<div id="tip" role="status"></div>
+
+<script>
+const B = {
+  auto:{name:"Automorphic forms & representation theory",short:"Automorphic forms",c:"--s1",tech:"Theta lifts, seesaw, Gan–Gross–Prasad and Bessel periods, relative trace formula, covers of GL₅, unitary groups"},
+  ant:{name:"Analytic number theory",short:"Analytic number theory",c:"--s2",tech:"Explicit formula, Weil positivity, von Mangoldt sums, Stepanov and Siegel auxiliary determinants"},
+  cm:{name:"CM curves, periods & Arakelov geometry",short:"CM & Arakelov",c:"--s3",tech:"Complex multiplication, theta values over periods, Chowla–Selberg, Bost's slope inequality"},
+  iwa:{name:"Iwasawa theory, Galois cohomology & K-theory",short:"Iwasawa & K-theory",c:"--s4",tech:"Iwasawa towers, a weak Vandiver statement, Lichtenbaum, K-groups of ℤ"},
+  qf:{name:"Quadratic forms, lattices & integral structures",short:"Lattices & forms",c:"--s5",tech:"Siegel mass formula, covolumes, divisibility and congruences of theta series"},
+  agff:{name:"Algebraic geometry over finite fields",short:"Geometry over 𝔽q",c:"--s6",tech:"Weil and Deligne, Katz's square-root cancellation, Bertini, étale cohomology"},
+  four:{name:"Fourier & harmonic analysis",short:"Fourier analysis",c:"--s7",tech:"Test-function design, iterated Parseval, Cauchy–Schwarz, approximate orthogonality"},
+  avag:{name:"Abelian varieties, schemes & arithmetic geometry",short:"Abelian varieties & schemes",c:"--s8",tech:"Abelian schemes and polarizations, degenerations and moduli, line bundles, blow-ups, p-adic Hodge theory. Found in the Lean code; not an ingredient of the outline"},
+  comb:{name:"Combinatorics & random matrix theory",short:"Combinatorics",c:"--ink-3",tech:"Pigeonholing, Behrend's construction, a Mehta-type integral"}
+};
+const STEPS = [
+ [1,"6 Oct","Stepanov's auxiliary determinant, the template from function fields",1,{ant:.5,agff:.5}],
+ [2,"9 Oct","A derivation vanishes mod p on a CM curve; p-divisibility of theta derivatives over the period",1,{cm:1}],
+ [3,"19 Oct","The quadric qN = Mk + R, and automorphy of μ through thetas on a sixfold cover of GL₅",2,{auto:.5,agff:.25,cm:.25}],
+ [4,"6 Oct","Positivity W(1_S) ≥ 0 from a determinant: Stepanov with multiplicity one",2,{ant:.75,four:.25}],
+ [5,"20 Oct","Switch to a smoothed von Mangoldt sum; sign from Guinand–Weil, size from Katz-style bounds",1,{ant:.3,agff:.4,four:.15,comb:.15}],
+ [6,"8 Oct","Positivity for a test function concentrated near zero",1,{ant:.6,four:.4}],
+ [7,"14 Oct","Determinants whose entries are Gan–Gross–Prasad periods",1,{auto:.8,ant:.2}],
+ [8,"15 Nov","Iterated theta lifts U(X₀) → … → U(X_m) with m near √X, to win multiplicity m",2,{auto:1}],
+ [9,"15 Nov","Norms and levels of the lifts; cancelling the terms of order m",1,{cm:.35,qf:.35,auto:.3}],
+ [10,"15 Nov","Lower bound on the divisibility of the m-fold lift",1,{qf:.4,cm:.3,auto:.3}],
+ [11,"6 Oct","An Iwasawa tower standing in for pigeonholing over 𝔽qⁿ/𝔽q",1,{iwa:.8,comb:.2}],
+ [12,"15 Nov","Seesaw identity: the period of the iterated lift is a Bessel period",1,{auto:1}],
+ [13,"6 Oct","Bost's slope inequality (the note does not say where it enters)",.5,{cm:1}],
+ [14,"15 Nov","Cost of each lift; move the constant to a function field or twist it away",1,{auto:.5,ant:.3,agff:.2}],
+ [15,"15 Nov","An integral structure glued across Hecke characters",1,{qf:.5,auto:.3,iwa:.2}],
+ [16,"14 Oct","Relative trace formula; Cauchy–Schwarz down to the norm of a Poincaré series",1,{auto:.7,four:.3}],
+ [17,"15 Nov","A weak form of Vandiver's conjecture for classes that twisting cannot kill",1,{iwa:1}],
+ [18,"15 Nov","Covolumes, index of the theta series, congruences between lifts and forms",1,{qf:.5,auto:.5}],
+ [19,"19 Oct","Precise choice of the tower using Behrend (the note expects this to be removable)",.5,{comb:.6,iwa:.4}],
+ [20,"16 Nov","Conclusion: the Generalized Riemann Hypothesis",0,{}]
+];
+
+/* Measured in the Lean archive (census_out/measured_weights.json), % of code lines */
+// shown in the bars: files with no matching name take their folder's branch mix
+const LEAN = {avag:23.75, auto:24.29, qf:23.47, four:9.9, cm:6.32, agff:5.49, iwa:5.33, ant:1.41, comb:0.04};
+const LEAN_MATCHED = {avag:24.4, auto:24.0, qf:23.6, four:10.3, cm:6.4, agff:5.0, iwa:4.9, ant:1.4, comb:0.03};  // unmatched files left out
+const LEAN_IMP = {auto:24.36, avag:23.93, qf:22.82, four:9.14, cm:6.21, iwa:6.16, agff:5.92, ant:1.42, comb:0.03};  // unmatched files take the mix of the files that import them
+const LEAN_FM = {avag:35.7, auto:28.7, qf:27.1, four:4.9, cm:0.7, agff:1.0, iwa:1.4, ant:0.5, comb:0};  // folder-majority
+// importance re-estimate by Claude Fable 5.2 (census_out/fable_reestimate.md), with low–high range
+const FABLE = {auto:35.6, qf:12.6, iwa:12.0, ant:10.9, cm:9.9, four:6.2, avag:6.1, agff:5.1, comb:1.6};
+const FABLE_R = {auto:[28,42], qf:[8,18], iwa:[8,16], ant:[7,16], cm:[6,13], four:[4,10], avag:[3,12], agff:[3,8], comb:[0.5,3]};
+// how the re-estimate changed each outline step (unlisted steps unchanged)
+const REV = {1:"Weight 1 → 0.5: Stepanov is named in no Lean file", 2:"CM 60%, abelian varieties 40%: the main chain cites abelian-scheme inputs",
+ 3:"Adds Fourier 10%: iterated Parseval and Gauss sums (note, footnote 3)", 4:"Weight 2 → 1.5; analytic 60%, Fourier 20%, automorphic 20%",
+ 5:"Analytic 40%, geometry over 𝔽q 30%, Fourier 20%, combinatorics 10%", 8:"Automorphic 85%, lattices 15%: the lifts run between definite unitary groups",
+ 9:"Weight 1 → 1.5; lattices 45%: genus mass is a top-level hypothesis in the Lean code", 10:"Weight 1 → 1.5; lattices 45%: the divisibility link is central in the Lean code",
+ 11:"Iwasawa 85%, combinatorics 15%", 12:"Unchanged; the Lean code confirms the Bessel identity",
+ 13:"Weight 0.5 → 1; lattices 40%, CM 40%, abelian varieties 20%: a height inequality sits in the main chain",
+ 16:"Automorphic 60%, Fourier 40%", 17:"Weight 1 → 1.5: a Sha-length bound is an input of the final theorem", 19:"Weight 0.5 → 0.25: the note expects it to be removable"};
+const INFRA = {infra:22.97, avag:18.83, auto:18.5, qf:18.14, four:7.93, cm:4.93, agff:3.88, iwa:3.75, ant:1.04, comb:0.03};  // % of all code
+const UNATTR = 23.0;
+const STATS = [["175,187","Lean files"],["15.5 M","code lines"],["818,755","theorem declarations"],["234,220","definitions"],["0","sorry, axiom or native_decide"]];
+// [folder, % of all code lines, files, keyword mix: [branch | "none", % of the folder's lines]]
+const FOLD = [
+ ["Development/AbelianVarietyTheory/Proofs/DivisorProofs", 16.7, 42424, [["avag", 30], ["auto", 20], ["none", 17]]],
+ ["Development/AutomorphicArithmetic/AutomorphicVarieties", 5.0, 7959, [["none", 39], ["auto", 31], ["iwa", 9]]],
+ ["Development/AutomorphicSpectrum/Proofs/BlockDecomposition", 4.0, 8354, [["auto", 29], ["avag", 20], ["none", 20]]],
+ ["Development/AbelianVarietyTheory/Proofs/InertiaEigenvalues", 4.0, 8951, [["none", 28], ["auto", 20], ["qf", 18]]],
+ ["GroundTheory/HeightsAndTheta/Heights", 3.5, 6348, [["none", 49], ["auto", 21], ["avag", 15]]],
+ ["Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition", 3.5, 7769, [["qf", 25], ["avag", 19], ["none", 19]]],
+ ["Development/AbelianVarietyTheory/Proofs/TwistedOperators", 3.2, 6642, [["qf", 43], ["auto", 34], ["four", 9]]],
+ ["Development/AbelianVarietyTheory/Definitions", 2.6, 2198, [["avag", 44], ["qf", 18], ["auto", 13]]],
+ ["Development/WeilBound/CoreStatements", 2.6, 3746, [["avag", 28], ["none", 22], ["auto", 19]]],
+ ["Formalism/HermitianCurvature/HermitianCurvatureProofs", 2.5, 1854, [["four", 74], ["auto", 11], ["qf", 10]]],
+ ["Development/AutomorphicArithmetic/Foundations", 2.5, 4413, [["auto", 35], ["four", 16], ["avag", 13]]],
+ ["Formalism/PeriodIntegrals/UnitaryGroupMassFormula", 2.4, 3615, [["none", 37], ["qf", 35], ["four", 14]]]
+];
+// [year, technique, who, branch | "x", used in, uncertain, Lean files naming it (null: not counted), found only in the Lean code]
+const T = [
+ [1799,"Parseval's identity","Parseval","four","Step 5, applied k times",0,113],
+ [1801,"Gauss sums","Gauss","ant","Step 5",0,183],
+ [1821,"Cauchy–Schwarz inequality","Cauchy","four","Step 16",0,198],
+ [1829,"Theta functions","Jacobi","cm","Steps 2, 3",0,1059],
+ [1849,"Kummer–Vandiver conjecture","Kummer, later Vandiver","iwa","Step 17",0,0],
+ [1857,"Complex multiplication","Kronecker","cm","Steps 2, 3. In the Lean code mostly as Mathlib's IsCMField",0,16454],
+ [1859,"The Riemann Hypothesis is posed","Riemann","x","The target. Lean count: files naming riemannZeta, LSeries, LFunction or DirichletCharacter",0,1514],
+ [1873,"Triangle groups","Schwarz","auto","The (2,3,6) trick from the early exploration",0,0],
+ [1882,"Bertini's theorem","Bertini","agff","Step 5",0,20],
+ [1882,"Poincaré series","Poincaré","auto","Step 16",0,78],
+ [1895,"von Mangoldt's explicit formula","von Mangoldt","ant","Step 5",0,129],
+ [1897,"Ray class groups and class fields","Weber","iwa","Found in the Lean code: a PublishedTheorems folder, WeberRayClassFields",0,null,1],
+ [1918,"Hecke characters","Hecke","auto","Steps 12, 15",0,2565],
+ [1918,"Rosati involution","Rosati","avag","Found in the Lean code: PublishedTheorems/RosatiTraces",0,153,1],
+ [1925,"Weyl character and dimension formulas","Weyl","auto","Step 9",1,149],
+ [1929,"Siegel's auxiliary-function method","Siegel","ant","Early exploration: Stepanov without multiplicity",0,2],
+ [1935,"Siegel mass formula","Siegel","qf","Step 9. In the Lean code mostly through one name, GenusMassVolumes",0,28672],
+ [1936,"Local–global classification of hermitian forms","Landherr","qf","Found in the Lean code: PublishedTheorems/Landherr",0,58,1],
+ [1946,"Behrend's construction","Behrend","comb","Step 19",1,2],
+ [1948,"RH for curves over finite fields","Weil","agff","Step 3. A 0.75M-line Lean folder is called WeilBound, but its contents (theta lifts, GL representations) don't show which bound it means",0,2],
+ [1948,"Abelian varieties over any field","Weil","avag","Found in the Lean code: Development/AbelianVarietyTheory holds 47% of all code",0,3693,1],
+ [1949,"Chowla–Selberg formula","Chowla, Selberg","cm","Step 9",0,3],
+ [1951,"Siegel–Weil formula","Siegel 1951, Weil 1965","auto","Found in the Lean code: PublishedTheorems/SiegelWeil",0,1462,1],
+ [1952,"Guinand–Weil explicit formula, Weil positivity","Guinand 1948, Weil 1952","ant","Steps 4 to 6",0,41],
+ [1953,"Turán's power-sum method","Turán","ant","Step 5",1,8],
+ [1959,"Iwasawa theory","Iwasawa","iwa","Steps 11, 19",0,974],
+ [1962,"Poitou–Tate duality","Poitou, Tate","iwa","Found in the Lean code: PublishedTheorems/PoitouTateDuality",0,158,1],
+ [1963,"Mehta integral","Mehta, Dyson","comb","Step 5",1,0],
+ [1963,"Satake isomorphism","Satake","auto","Found in the Lean code: AbelianVarietyTheory/Proofs/SatakeParameters",0,908,1],
+ [1964,"Weil representation","Weil","auto","Steps 3, 8",0,1473],
+ [1964,"Étale cohomology","Grothendieck, Artin","agff","Step 5. The Lean count also includes étale algebras and morphisms",0,4137],
+ [1969,"Stepanov's method","Stepanov","ant","Steps 1, 4",0,0],
+ [1972,"Semistable reduction of abelian varieties","Grothendieck (SGA 7)","avag","Found in the Lean code: PublishedTheorems/PotentialSemistability",0,null,1],
+ [1973,"Lichtenbaum's conjecture on K-groups","Lichtenbaum","iwa","Step 17",0,0],
+ [1973,"Langlands classification","Langlands","auto","Found in the Lean code: PublishedTheorems/LanglandsClassification. Lean count: files naming Langlands",0,3088,1],
+ [1974,"Proof of the Weil conjectures","Deligne","agff","Step 3",0,2538],
+ [1974,"Arakelov geometry","Arakelov","cm","Step 13",0,8],
+ [1979,"Howe duality for theta lifts","Howe","auto","Step 8",0,1346],
+ [1979,"Ferrero–Washington theorem (μ = 0)","Ferrero, Washington","iwa","Found in the Lean code: PublishedTheorems/FerreroWashington",0,13,1],
+ [1980,"Monodromy bounds for exponential sums","Katz","agff","Step 5",0,774],
+ [1981,"Jacquet–Shalika bounds and rigidity","Jacquet, Shalika","auto","Found in the Lean code: PublishedTheorems/JacquetShalikaBound and JacquetShalikaRigidity",0,190,1],
+ [1984,"Seesaw identities","Kudla, Rallis","auto","Step 12",0,3466],
+ [1984,"Theta functions on covers of GL_r","Kazhdan, Patterson","auto","Steps 3, 16",0,119],
+ [1986,"Relative trace formula","Jacquet","auto","Step 16",0,224],
+ [1989,"Arthur parameters and Adams' conjecture","Arthur, Adams","auto","Step 8, read from the notation π ⊞ μ[t]",1,16],
+ [1989,"Casselman–Wallach globalization","Casselman, Wallach","auto","Found in the Lean code: PublishedTheorems/CasselmanWallach",0,57,1],
+ [1990,"Clozel's purity lemma","Clozel","auto","Found in the Lean code: PublishedTheorems/ClozelPurity",0,null,1],
+ [1992,"Gross–Prasad periods","Gross, Prasad","auto","Step 7",0,330],
+ [1996,"Bost's slope inequality","Bost","cm","Step 13",0,0],
+ [2006,"Kisin modules for crystalline representations","Kisin","avag","Found in the Lean code: PublishedTheorems/KisinCrTrivial",0,331,1],
+ [2012,"Gan–Gross–Prasad conjectures","Gan, Gross, Prasad","auto","Steps 7, 12. Lean count shared with Gross–Prasad periods",0,330],
+ [2021,"Lean 4, the proof language","de Moura, Ullrich","x","Medium of the whole proof",0,null],
+ [2026,"Multiplicity from iterated theta lifts","Alpöge with Claude","x","The claimed new mechanism: steps 3, 4, 8",0,null]
+];
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const col = k => k === "x" ? "var(--ink)" : `var(${B[k].c})`;
+const fmt = n => n.toLocaleString("en-US");
+const pr = v => v === 0 ? "0%" : v < 0.1 ? "<0.1%" : (v < 10 ? v.toFixed(1) : String(Math.round(v))) + "%";
+const f1 = v => v === 0 ? "0%" : v < 0.1 ? "<0.1%" : v.toFixed(1) + "%";
+const dot = k => k === "none" ? `<i class="dot hollow"></i>` : `<i class="dot" style="background:${col(k)}"></i>`;
+
+const tip = document.getElementById("tip");
+const place = (html, px, py) => {
+  tip.innerHTML = html; tip.style.display = "block";
+  const r = tip.getBoundingClientRect();
+  tip.style.left = Math.max(8, Math.min(px + 14, innerWidth - r.width - 8)) + "px";
+  tip.style.top = Math.max(8, Math.min(py + 14, innerHeight - r.height - 8)) + "px";
+};
+const hide = () => { tip.style.display = "none"; };
+
+/* ---- weights ---- */
+const w = {}; let tot = 0;
+for (const [, , , sw, a] of STEPS) for (const k in a) { w[k] = (w[k] || 0) + sw * a[k]; tot += sw * a[k]; }
+const est = k => 100 * (w[k] || 0) / tot;
+const order = Object.keys(B).sort((a, b) => LEAN[b] - LEAN[a]);
+const max = Math.max(...order.map(k => Math.max(LEAN[k], FABLE_R[k][1])));
+const wd = v => (v / max * 88).toFixed(1);
+const barsEl = document.getElementById("bars");
+barsEl.innerHTML = order.map(k => `
+  <div class="bar" data-k="${k}" tabindex="0">
+    <div class="name">${esc(B[k].name)}</div>
+    <div class="track">
+      <div class="ln"><div class="fill" style="background:${col(k)};width:${wd(LEAN[k])}%"></div><span class="val">${pr(LEAN[k])}</span></div>
+      <div class="ln est-ln"><div class="fill est" style="border-color:${col(k)};width:${wd(FABLE[k])}%"></div><span class="val est" style="margin-left:${Math.max(0, wd(FABLE_R[k][1]) - wd(FABLE[k])).toFixed(1)}%">${pr(FABLE[k])}</span><i class="rng" style="left:${wd(FABLE_R[k][0])}%;width:${(wd(FABLE_R[k][1]) - wd(FABLE_R[k][0])).toFixed(1)}%"></i></div>
+    </div>
+    <div class="tech">${esc(B[k].tech)}</div>
+  </div>`).join("");
+const top3 = order.slice(0, 3), s3 = top3.reduce((s, k) => s + LEAN[k], 0);
+document.getElementById("lead").textContent =
+  `In the Lean code three branches carry about a quarter each, ${Math.round(s3)}% together: ${B[top3[0]].short}, ${B[top3[1]].short} and ${B[top3[2]].short}. By estimated importance, ${B.auto.short} leads at about ${Math.round(FABLE.auto)}%. Analytic number theory carries about ${Math.round(FABLE.ant)}% of the estimated importance but only about ${Math.round(LEAN.ant)}% of the code.`;
+document.getElementById("unattr").textContent =
+  `${UNATTR}% of the code's lines sit in small helper files with no branch-specific name (median 40 lines, against 58 for the rest). Their vocabulary is generic Mathlib: Finset, Nat, Module, Ideal, Matrix. The solid bars give each such file the branch mix of the other files in its folder. Two alternatives barely change anything: leaving those files out moves no branch by more than 0.6 points, and giving each one the mix of the files that import it moves none by more than 0.8.`;
+const barTip = b => { const k = b.dataset.k;
+  return `<b>${esc(B[k].name)}</b>Lean code, in the bars (folder fill): ${f1(LEAN[k])}<br>Matched files only: ${f1(LEAN_MATCHED[k])}` +
+    (LEAN_IMP ? `<br>Import fill: ${f1(LEAN_IMP[k])}` : "") + `<br>Folder-majority check: ${f1(LEAN_FM[k])}` +
+    `<br>Importance re-estimate: ${f1(FABLE[k])} (range ${FABLE_R[k][0]}–${FABLE_R[k][1]}%)<br>First estimate, outline only: ${f1(est(k))}`; };
+barsEl.addEventListener("pointermove", e => { const b = e.target.closest(".bar"); b ? place(barTip(b), e.clientX, e.clientY) : hide(); });
+barsEl.addEventListener("pointerleave", hide);
+barsEl.addEventListener("focusin", e => { const b = e.target.closest(".bar"); if (b) { const r = b.getBoundingClientRect(); place(barTip(b), r.left + r.width / 2, r.bottom); } });
+barsEl.addEventListener("focusout", hide);
+document.getElementById("mtable").innerHTML =
+  `<thead><tr><th>Branch</th><th>Importance re-estimate (range)</th><th>First estimate, outline only</th><th>Lean: folder fill (bars)</th><th>Lean: matched files only</th><th>Lean: import fill</th><th>Lean: folder-majority</th></tr></thead><tbody>` +
+  order.map(k => `<tr><td><span class="chip">${dot(k)}${esc(B[k].short)}</span></td><td class="n">${f1(FABLE[k])} (${FABLE_R[k][0]}–${FABLE_R[k][1]})</td><td class="n">${f1(est(k))}</td><td class="n">${f1(LEAN[k])}</td><td class="n">${f1(LEAN_MATCHED[k])}</td><td class="n">${LEAN_IMP ? f1(LEAN_IMP[k]) : "running"}</td><td class="n">${f1(LEAN_FM[k])}</td></tr>`).join("") + `</tbody>`;
+const iorder = Object.keys(INFRA).sort((a, b) => INFRA[b] - INFRA[a]);
+document.getElementById("infra").innerHTML = iorder.map(k => `
+  <div class="bar">
+    <div class="name">${k === "infra" ? `General algebra &amp; bookkeeping<span class="subname">helper files with no branch-specific name</span>` : esc(B[k].short)}</div>
+    <div class="track"><div class="ln"><div class="fill${k === "infra" ? " hatch" : ""}" style="${k === "infra" ? "" : `background:${col(k)};`}width:${(INFRA[k] / INFRA[iorder[0]] * 88).toFixed(1)}%"></div><span class="val">${pr(INFRA[k])}</span></div></div>
+  </div>`).join("");
+
+/* ---- archive facts ---- */
+document.getElementById("stats").innerHTML = STATS.map(([v, l]) => `<div class="stat"><b>${esc(v)}</b><span>${esc(l)}</span></div>`).join("");
+document.getElementById("f12").textContent = `${Math.round(FOLD.reduce((s, f) => s + f[1], 0))}%`;
+document.getElementById("ftable").innerHTML =
+  `<thead><tr><th>Folder</th><th>Share of code</th><th>Files</th><th>Largest name-pattern shares</th></tr></thead><tbody>` +
+  FOLD.map(([p, sh, n, mix]) => `<tr><td class="path">${esc(p).replace(/\//g, "/<wbr>")}</td><td class="n">${sh.toFixed(1)}%</td><td class="n">${fmt(n)}</td><td>${
+    mix.map(([k, v]) => `<span class="chip">${dot(k)}${k === "none" ? "no pattern" : esc(B[k].short)} <span class="num">${v}%</span></span>`).join("")}</td></tr>`).join("") + `</tbody>`;
+
+/* ---- timeline ---- */
+const W = 960, L = 24, R = 24, Y0 = 1790, Y1 = 2030, RH = 23, TOP = 78;
+const x = y => L + (y - Y0) / (Y1 - Y0) * (W - L - R);
+const H = TOP + T.length * RH + 30;
+const faded = t => t[3] !== "x" && !t[7] && t[6] !== null && t[6] < 10;
+const mark = (cx, cy, t, r = 5) => {
+  const [, , , k, , unc, , lo] = t, op = faded(t) ? ` opacity="0.35"` : "";
+  if (k === "x") return `<rect x="${cx - 4.5}" y="${cy - 4.5}" width="9" height="9" transform="rotate(45 ${cx} ${cy})" fill="var(--ink)" stroke="var(--surface)" stroke-width="2"/>`;
+  if (lo) return `<rect x="${cx - 5}" y="${cy - 5}" width="10" height="10" rx="2" fill="${col(k)}" stroke="var(--surface)" stroke-width="2"/>`;
+  return unc
+    ? `<circle cx="${cx}" cy="${cy}" r="${r - 1}" fill="var(--surface)" stroke="${col(k)}" stroke-width="2.5"${op}/>`
+    : `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${col(k)}" stroke="var(--surface)" stroke-width="2"${op}/>`;
+};
+let s = "";
+for (let y = 1800; y <= 2000; y += 50) {
+  s += `<line class="grid" x1="${x(y)}" x2="${x(y)}" y1="18" y2="${H - 22}"/>`;
+  s += `<text class="tick" x="${x(y)}" y="12" text-anchor="middle">${y}</text><text class="tick" x="${x(y)}" y="${H - 6}" text-anchor="middle">${y}</text>`;
+}
+s += `<line class="grid" x1="${L}" x2="${W - R}" y1="42" y2="42"/>`;
+T.forEach(t => { s += mark(x(t[0]), 42, t, 5); });
+s += `<text class="tick" x="${L}" y="64">All ingredients on one axis, then one per row</text>`;
+T.forEach((t, i) => {
+  const [yr, name, , k, , unc] = t, cx = x(yr), cy = TOP + i * RH + RH / 2, right = yr < 1925;
+  const br = k === "x" ? "" : B[k].short, q = unc ? " (?)" : "", fc = faded(t) ? ` class="faint"` : "";
+  const label = right
+    ? `<text${fc} x="${cx + 11}" y="${cy + 4.5}" font-size="13"><tspan class="yr">${yr}</tspan>  ${esc(name + q)}<tspan class="br">${br ? "  ·  " + esc(br) : ""}</tspan></text>`
+    : `<text${fc} x="${cx - 11}" y="${cy + 4.5}" font-size="13" text-anchor="end"><tspan class="br">${br ? esc(br) + "  ·  " : ""}</tspan>${esc(name + q)}  <tspan class="yr">${yr}</tspan></text>`;
+  s += `<g class="row" tabindex="0" data-i="${i}"><rect class="hit" x="0" y="${cy - RH / 2}" width="${W}" height="${RH}"/>${label}${mark(cx, cy, t)}</g>`;
+});
+const svg = document.getElementById("tl");
+svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+svg.innerHTML = s;
+
+const leanLine = t => t[6] === null ? (t[7] ? "Named as a Lean folder; files not counted." : "")
+  : t[6] === 0 ? "Not named in any Lean file." : `Named in ${fmt(t[6])} of 175,187 Lean files.`;
+const cls = T.filter(t => t[3] !== "x"), yrs = cls.map(t => t[0]).sort((a, b) => a - b);
+const med = yrs.length % 2 ? yrs[(yrs.length - 1) / 2] : Math.round((yrs[yrs.length / 2 - 1] + yrs[yrs.length / 2]) / 2);
+const fromNote = cls.filter(t => !t[7]), leanOnly = cls.filter(t => t[7]);
+const named = fromNote.filter(t => t[6] >= 10).length, rare = fromNote.filter(faded);
+document.getElementById("tlsub").textContent =
+  `${cls.length} established techniques: ${fromNote.length} named or clearly implied in the note, and ${leanOnly.length} more found only in the Lean code. ` +
+  `They run from ${yrs[0]} to ${yrs[yrs.length - 1]}; the median birth year is about ${med}, and ${yrs.filter(y => y >= 1945).length} date from 1945 or later. ` +
+  `Of the note's ${fromNote.length}, ${named} are named in at least 10 Lean files and ${rare.length} in fewer than 10 (faded rows). Hover or focus a row for who, where and the Lean count.`;
+
+document.getElementById("key").innerHTML =
+  order.map(k => `<span>${dot(k)}${esc(B[k].short)}</span>`).join("") +
+  `<span><i class="dot sq"></i>Found only in the Lean code</span><span><i class="dot faded"></i>Named in under 10 Lean files</span>` +
+  `<span><i class="dot hollow"></i>Identification is a guess</span><span><i class="dot dia"></i>Problem, medium, new idea</span>`;
+
+const show = (el, px, py) => {
+  const t = T[+el.dataset.i], ll = leanLine(t);
+  place(`<b>${t[0]} · ${esc(t[1])}</b><i>${esc(t[2])}${t[3] !== "x" ? " · " + esc(B[t[3]].name) : ""}</i>${esc(t[4])}${ll ? "<i>" + esc(ll) + "</i>" : ""}${t[5] ? "<i>Which result the note means is a guess.</i>" : ""}`, px, py);
+};
+svg.addEventListener("pointermove", e => { const g = e.target.closest(".row"); g ? show(g, e.clientX, e.clientY) : hide(); });
+svg.addEventListener("pointerleave", hide);
+svg.addEventListener("focusin", e => { const g = e.target.closest(".row"); if (g) { const r = g.getBoundingClientRect(); show(g, r.left + r.width / 2, r.bottom); } });
+svg.addEventListener("focusout", hide);
+
+document.getElementById("tltable").innerHTML =
+  `<thead><tr><th>Year</th><th>Technique</th><th>Origin</th><th>Branch</th><th>Where it is used</th><th>Lean files</th></tr></thead><tbody>` +
+  T.map(t => `<tr><td class="n">${t[0]}</td><td>${esc(t[1])}${t[5] ? " (?)" : ""}</td><td>${esc(t[2])}</td><td>${t[3] === "x" ? "" : esc(B[t[3]].short)}</td><td>${esc(t[4])}</td><td class="n">${
+    t[6] === null ? (t[7] ? "folder" : "") : fmt(t[6])}</td></tr>`).join("") + `</tbody>`;
+
+document.getElementById("steps").innerHTML =
+  `<thead><tr><th>#</th><th>Arrived</th><th>What the step does</th><th>Weight</th><th>Assigned to</th><th>Re-estimate</th></tr></thead><tbody>` +
+  STEPS.map(([n, d, txt, sw, a]) => `<tr><td class="n">${n}</td><td class="n">${d}</td><td>${esc(txt)}</td><td class="n">${sw}</td><td>${
+    Object.keys(a).sort((p, q) => a[q] - a[p]).map(k => `<span class="chip">${dot(k)}${esc(B[k].short)} <span class="num">${Math.round(a[k] * 100)}%</span></span>`).join("")}</td><td>${
+    n === 20 ? "" : esc(REV[n] || "Unchanged")}</td></tr>`).join("") +
+  `<tr><td class="n">21</td><td class="n">new</td><td>The "automorphic window": published results the outline never mentions, among them local Langlands for GLₙ, Jacquet–Shalika, Clozel's purity, Galois representations of polarized automorphic representations and p-adic Hodge theory. It is one of the inputs to the final theorem in the Lean code.</td><td class="n">2.5</td><td>${
+    [["auto", 45], ["avag", 35], ["iwa", 10], ["cm", 10]].map(([k, v]) => `<span class="chip">${dot(k)}${esc(B[k].short)} <span class="num">${v}%</span></span>`).join("")}</td><td>Added by the re-estimate</td></tr></tbody>`;
+</script>
+</body>
+</html>

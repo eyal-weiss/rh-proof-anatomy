@@ -1,0 +1,64 @@
+{
+ "per_file_split_pct": {
+  "avag": 24.4,
+  "auto": 24.0,
+  "qf": 23.6,
+  "four": 10.3,
+  "cm": 6.4,
+  "agff": 5.0,
+  "iwa": 4.9,
+  "ant": 1.4,
+  "comb": 0.0
+ },
+ "folder_majority_pct": {
+  "avag": 35.7,
+  "auto": 28.7,
+  "qf": 27.1,
+  "four": 4.9,
+  "cm": 0.7,
+  "agff": 1.0,
+  "iwa": 1.4,
+  "ant": 0.5,
+  "comb": 0.0
+ },
+ "unattributed_pct": 23.0,
+ "total_code": 15531759,
+ "folder_fill_pct": {
+  "avag": 23.75,
+  "auto": 24.29,
+  "qf": 23.47,
+  "four": 9.9,
+  "cm": 6.32,
+  "agff": 5.49,
+  "iwa": 5.33,
+  "ant": 1.41,
+  "comb": 0.04
+ },
+ "infrastructure_view_pct_of_all_code": {
+  "avag": 18.83,
+  "auto": 18.5,
+  "qf": 18.14,
+  "four": 7.93,
+  "cm": 4.93,
+  "agff": 3.88,
+  "iwa": 3.75,
+  "ant": 1.04,
+  "comb": 0.03,
+  "infra": 22.97
+ },
+ "import_fill_pct": {
+  "avag": 23.93,
+  "auto": 24.36,
+  "qf": 22.82,
+  "four": 9.14,
+  "cm": 6.21,
+  "agff": 5.92,
+  "iwa": 6.16,
+  "ant": 1.42,
+  "comb": 0.03
+ },
+ "import_fill_how_lines_pct": {
+  "matched": 77.03,
+  "importers": 22.97
+ }
+}

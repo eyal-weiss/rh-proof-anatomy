@@ -1,0 +1,198 @@
+{
+ "seconds": 76.1,
+ "n_files": 175187,
+ "tech": {
+  "Parseval": {
+   "files": 113,
+   "hits": 370
+  },
+  "Gauss sums": {
+   "files": 183,
+   "hits": 572
+  },
+  "Cauchy-Schwarz": {
+   "files": 198,
+   "hits": 280
+  },
+  "Theta functions": {
+   "files": 1059,
+   "hits": 2402
+  },
+  "Vandiver": {
+   "files": 0,
+   "hits": 0
+  },
+  "Complex multiplication": {
+   "files": 16454,
+   "hits": 36107
+  },
+  "Triangle groups": {
+   "files": 0,
+   "hits": 0
+  },
+  "Bertini": {
+   "files": 20,
+   "hits": 55
+  },
+  "Poincare series": {
+   "files": 78,
+   "hits": 159
+  },
+  "von Mangoldt": {
+   "files": 129,
+   "hits": 757
+  },
+  "Hecke characters": {
+   "files": 2565,
+   "hits": 6474
+  },
+  "Weyl character/dimension": {
+   "files": 149,
+   "hits": 672
+  },
+  "Siegel auxiliary/Siegel lemma": {
+   "files": 2,
+   "hits": 2
+  },
+  "Siegel mass formula": {
+   "files": 28672,
+   "hits": 35002
+  },
+  "Behrend": {
+   "files": 2,
+   "hits": 26
+  },
+  "Weil bound / RH for curves": {
+   "files": 2,
+   "hits": 5
+  },
+  "Chowla-Selberg": {
+   "files": 3,
+   "hits": 10
+  },
+  "Explicit formula / Weil positivity": {
+   "files": 41,
+   "hits": 94
+  },
+  "Turan": {
+   "files": 8,
+   "hits": 43
+  },
+  "Iwasawa theory": {
+   "files": 974,
+   "hits": 3448
+  },
+  "Mehta/Dyson": {
+   "files": 0,
+   "hits": 0
+  },
+  "Weil representation": {
+   "files": 1473,
+   "hits": 3173
+  },
+  "Etale": {
+   "files": 4137,
+   "hits": 20579
+  },
+  "Stepanov": {
+   "files": 0,
+   "hits": 0
+  },
+  "Lichtenbaum / K-theory": {
+   "files": 0,
+   "hits": 0
+  },
+  "Deligne": {
+   "files": 2538,
+   "hits": 3710
+  },
+  "Arakelov / Faltings height": {
+   "files": 8,
+   "hits": 12
+  },
+  "Howe duality / theta lifts": {
+   "files": 1346,
+   "hits": 3432
+  },
+  "Katz / monodromy": {
+   "files": 774,
+   "hits": 2108
+  },
+  "Seesaw": {
+   "files": 3466,
+   "hits": 6093
+  },
+  "Kazhdan-Patterson / metaplectic": {
+   "files": 119,
+   "hits": 277
+  },
+  "Relative trace formula": {
+   "files": 224,
+   "hits": 359
+  },
+  "Arthur parameters": {
+   "files": 16,
+   "hits": 22
+  },
+  "Gross-Prasad / GGP": {
+   "files": 330,
+   "hits": 1836
+  },
+  "Bost": {
+   "files": 0,
+   "hits": 0
+  },
+  "Whittaker": {
+   "files": 1024,
+   "hits": 2524
+  },
+  "Satake": {
+   "files": 908,
+   "hits": 3288
+  },
+  "Jacquet-Shalika": {
+   "files": 190,
+   "hits": 496
+  },
+  "Casselman-Wallach": {
+   "files": 57,
+   "hits": 113
+  },
+  "Langlands": {
+   "files": 3088,
+   "hits": 4264
+  },
+  "Siegel-Weil": {
+   "files": 1462,
+   "hits": 3297
+  },
+  "Poitou-Tate": {
+   "files": 158,
+   "hits": 253
+  },
+  "Ferrero-Washington": {
+   "files": 13,
+   "hits": 21
+  },
+  "Kisin": {
+   "files": 331,
+   "hits": 512
+  },
+  "Rosati": {
+   "files": 153,
+   "hits": 401
+  },
+  "Landherr": {
+   "files": 58,
+   "hits": 143
+  },
+  "Abelian schemes/varieties": {
+   "files": 3693,
+   "hits": 8332
+  },
+  "Riemann zeta / L-functions": {
+   "files": 1514,
+   "hits": 11915
+  }
+ }
+}

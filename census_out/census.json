@@ -1,0 +1,3082 @@
+{
+ "generated": "2026-11-20 13:46:39",
+ "root": "lean_src",
+ "seconds": 450.0,
+ "totals": {
+  "project_files": 175187,
+  "dependency_files": 0,
+  "lines": 17549402,
+  "code_lines": 15531759,
+  "theorems": 818755,
+  "defs": 234220,
+  "structures": 8450,
+  "axioms": 0,
+  "opaque": 0,
+  "sorry": 0,
+  "admit": 0,
+  "native_decide": 0,
+  "implemented_by": 0,
+  "sorryAx": 0,
+  "roots": 1,
+  "main_root": "lean.src.Main",
+  "main_closure_files": 175187,
+  "main_closure_code_lines": 15531759
+ },
+ "top_roots": [
+  {
+   "module": "lean.src.Main",
+   "reaches": 175187
+  }
+ ],
+ "axioms": [],
+ "dirs_depth1": {
+  "lean": {
+   "files": 175187,
+   "lines": 17549402,
+   "code_lines": 15531759,
+   "theorems": 818755,
+   "defs": 234220,
+   "structures": 8450,
+   "axioms": 0,
+   "opaque": 0,
+   "sorry": 0,
+   "admit": 0,
+   "native_decide": 0,
+   "implemented_by": 0,
+   "sorryAx": 0,
+   "in_main": 175187
+  }
+ },
+ "dirs_depth2": {
+  "lean/src": {
+   "files": 175187,
+   "lines": 17549402,
+   "code_lines": 15531759,
+   "theorems": 818755,
+   "defs": 234220,
+   "structures": 8450,
+   "axioms": 0,
+   "opaque": 0,
+   "sorry": 0,
+   "admit": 0,
+   "native_decide": 0,
+   "implemented_by": 0,
+   "sorryAx": 0,
+   "in_main": 175187
+  }
+ },
+ "dir_edges": [],
+ "external_imports": {
+  "by_library": {
+   "Mathlib": 136266,
+   "Lean": 7,
+   "Batteries": 3
+  },
+  "by_area": {
+   "Mathlib": 136003,
+   "Mathlib.RingTheory": 90,
+   "Mathlib.Analysis": 53,
+   "Mathlib.NumberTheory": 37,
+   "Mathlib.LinearAlgebra": 34,
+   "Mathlib.Topology": 28,
+   "Mathlib.Algebra": 24,
+   "Mathlib.AlgebraicGeometry": 21,
+   "Mathlib.FieldTheory": 13,
+   "Mathlib.GroupTheory": 9,
+   "Mathlib.MeasureTheory": 8,
+   "Mathlib.Data": 7,
+   "Mathlib.CategoryTheory": 6,
+   "Mathlib.RepresentationTheory": 5,
+   "Lean.Elab": 5,
+   "Lean.LibrarySuggestions": 5,
+   "Batteries.Tactic": 3,
+   "Mathlib.Geometry": 3,
+   "Lean": 2,
+   "Mathlib.Combinatorics": 1,
+   "Mathlib.Tactic": 1
+  },
+  "by_subarea": {
+   "Mathlib": 136003,
+   "Mathlib.Topology.Algebra": 23,
+   "Mathlib.Analysis.Calculus": 15,
+   "Mathlib.Analysis.SpecialFunctions": 13,
+   "Mathlib.AlgebraicGeometry.Morphisms": 13,
+   "Mathlib.RingTheory.Ideal": 12,
+   "Mathlib.Analysis.InnerProductSpace": 11,
+   "Mathlib.NumberTheory.NumberField": 11,
+   "Mathlib.RingTheory.PowerSeries": 11,
+   "Mathlib.LinearAlgebra.Matrix": 11,
+   "Mathlib.NumberTheory.Padics": 10,
+   "Mathlib.RingTheory.AdicCompletion": 10,
+   "Mathlib.Analysis.Complex": 8,
+   "Mathlib.Analysis.Fourier": 8,
+   "Mathlib.RingTheory.Polynomial": 6,
+   "Mathlib.RingTheory.Valuation": 6,
+   "Mathlib.RingTheory.Teichmuller": 6,
+   "Mathlib.FieldTheory.IsAlgClosed": 5,
+   "Mathlib.Algebra.Module": 5,
+   "Mathlib.RingTheory.MvPowerSeries": 5,
+   "Mathlib.RingTheory.LocalRing": 5,
+   "Mathlib.RingTheory.RingHom": 5,
+   "Lean.Elab.Command": 5,
+   "Lean.LibrarySuggestions.Basic": 5,
+   "Mathlib.RingTheory.SimpleModule": 4,
+   "Mathlib.MeasureTheory.Integral": 4,
+   "Mathlib.RingTheory.DedekindDomain": 4,
+   "Mathlib.NumberTheory.LSeries": 4,
+   "Mathlib.GroupTheory.FiniteAbelian": 4,
+   "Mathlib.NumberTheory.Multiplicity": 4,
+   "Mathlib.RingTheory.TensorProduct": 4,
+   "Mathlib.RingTheory.Localization": 4,
+   "Mathlib.RingTheory.Jacobson": 4,
+   "Mathlib.RingTheory.Unramified": 4,
+   "Mathlib.AlgebraicGeometry.AlgClosed": 4,
+   "Mathlib.Algebra.Category": 4,
+   "Mathlib.LinearAlgebra.PiTensorProduct": 3,
+   "Mathlib.LinearAlgebra.Lagrange": 3,
+   "Mathlib.Algebra.DualNumber": 3,
+   "Mathlib.Algebra.Polynomial": 3,
+   "Mathlib.RingTheory.RootsOfUnity": 3,
+   "Mathlib.RingTheory.Etale": 3,
+   "Mathlib.GroupTheory.Perm": 3,
+   "Mathlib.Analysis.CStarAlgebra": 3,
+   "Mathlib.LinearAlgebra.Eigenspace": 3,
+   "Mathlib.Analysis.Normed": 3,
+   "Batteries.Tactic.OpenPrivate": 3,
+   "Mathlib.Geometry.Manifold": 3,
+   "Mathlib.RingTheory.Smooth": 3,
+   "Mathlib.Algebra.Homology": 3,
+   "Mathlib.Analysis.Matrix": 3,
+   "Mathlib.RingTheory.DiscreteValuationRing": 3,
+   "Mathlib.RingTheory.Algebraic": 2,
+   "Mathlib.Topology.ContinuousMap": 2,
+   "Mathlib.LinearAlgebra.Vandermonde": 2,
+   "Mathlib.LinearAlgebra.Charpoly": 2,
+   "Mathlib.LinearAlgebra.LinearIndependent": 2,
+   "Mathlib.NumberTheory.LegendreSymbol": 2,
+   "Mathlib.LinearAlgebra.TensorProduct": 2,
+   "Mathlib.Topology.Instances": 2,
+   "Mathlib.Data.Finset": 2,
+   "Mathlib.Algebra.MvPolynomial": 2,
+   "Mathlib.RingTheory.Nilpotent": 2,
+   "Mathlib.RingTheory.ZMod": 2,
+   "Mathlib.RingTheory.Flat": 2,
+   "Mathlib.LinearAlgebra.Basis": 2,
+   "Mathlib.RepresentationTheory.Homological": 2,
+   "Mathlib.FieldTheory.Galois": 2,
+   "Mathlib.NumberTheory.PrimesCongruentOne": 2,
+   "Mathlib.RingTheory.Norm": 2,
+   "Mathlib.RingTheory.GradedAlgebra": 2,
+   "Mathlib.RingTheory.Filtration": 2,
+   "Mathlib.RingTheory.Spectrum": 2,
+   "Mathlib.AlgebraicGeometry.Sites": 2,
+   "Mathlib.AlgebraicGeometry.PullbackCarrier": 2,
+   "Mathlib.CategoryTheory.Limits": 2,
+   "Mathlib.CategoryTheory.Abelian": 2,
+   "Mathlib.AlgebraicGeometry.AffineTransitionLimit": 2,
+   "Mathlib.AlgebraicGeometry.ValuativeCriterion": 2,
+   "Mathlib.MeasureTheory.Function": 2,
+   "Mathlib.MeasureTheory.Measure": 2,
+   "Lean": 2,
+   "Mathlib.NumberTheory.Chebyshev": 2,
+   "Mathlib.NumberTheory.Harmonic": 2,
+   "Mathlib.LinearAlgebra.ExteriorAlgebra": 2,
+   "Mathlib.Analysis.Convex": 1,
+   "Mathlib.Topology.Metrizable": 1,
+   "Mathlib.NumberTheory.ModularForms": 1,
+   "Mathlib.Combinatorics.HalesJewett": 1,
+   "Mathlib.GroupTheory.CosetCover": 1,
+   "Mathlib.LinearAlgebra.Dual": 1,
+   "Mathlib.FieldTheory.Finiteness": 1,
+   "Mathlib.GroupTheory.Sylow": 1,
+   "Mathlib.GroupTheory.Nilpotent": 1,
+   "Mathlib.NumberTheory.GaussSum": 1,
+   "Mathlib.FieldTheory.KummerExtension": 1,
+   "Mathlib.FieldTheory.Finite": 1,
+   "Mathlib.RepresentationTheory.Semisimple": 1,
+   "Mathlib.RingTheory.Derivation": 1,
+   "Mathlib.RingTheory.DualNumber": 1,
+   "Mathlib.RingTheory.MatrixAlgebra": 1,
+   "Mathlib.RingTheory.Artinian": 1,
+   "Mathlib.RingTheory.Nakayama": 1,
+   "Mathlib.RepresentationTheory.Irreducible": 1,
+   "Mathlib.Analysis.Distribution": 1,
+   "Mathlib.RingTheory.Support": 1,
+   "Mathlib.Algebra.QuadraticAlgebra": 1,
+   "Mathlib.Algebra.Algebra": 1,
+   "Mathlib.NumberTheory.Cyclotomic": 1,
+   "Mathlib.RingTheory.IntegralDomain": 1,
+   "Mathlib.RingTheory.MvPolynomial": 1,
+   "Mathlib.Data.Finsupp": 1,
+   "Mathlib.RingTheory.FiniteStability": 1,
+   "Mathlib.Data.Sym": 1,
+   "Mathlib.Topology.JacobsonSpace": 1,
+   "Mathlib.Analysis.LocallyConvex": 1,
+   "Mathlib.LinearAlgebra.Dimension": 1,
+   "Mathlib.NumberTheory.Bertrand": 1,
+   "Mathlib.CategoryTheory.CofilteredSystem": 1,
+   "Mathlib.NumberTheory.RamificationInertia": 1,
+   "Mathlib.CategoryTheory.Functor": 1,
+   "Mathlib.RingTheory.Henselian": 1,
+   "Mathlib.CategoryTheory.Triangulated": 1,
+   "Mathlib.Topology.Sober": 1,
+   "Mathlib.Topology.NoetherianSpace": 1,
+   "Mathlib.Topology.KrullDimension": 1,
+   "Mathlib.FieldTheory.PurelyInseparable": 1,
+   "Mathlib.RingTheory.PiTensorProduct": 1,
+   "Mathlib.MeasureTheory.Group": 1,
+   "Mathlib.Data.Matrix": 1,
+   "Mathlib.Algebra.BigOperators": 1,
+   "Mathlib.Data.Real": 1,
+   "Mathlib.Algebra.Order": 1,
+   "Mathlib.Tactic.FieldSimp": 1,
+   "Mathlib.Tactic.Linarith": 1,
+   "Mathlib.Data.Fintype": 1,
+   "Mathlib.Tactic.NormNum": 1,
+   "Mathlib.Tactic.Ring": 1,
+   "Mathlib.Data.Nat": 1,
+   "Mathlib.LinearAlgebra.Finsupp": 1,
+   "Mathlib.LinearAlgebra.Trace": 1,
+   "Mathlib.AlgebraicGeometry.AffineSpace": 1,
+   "Mathlib.CategoryTheory.Monoidal": 1,
+   "Mathlib.RingTheory.HopfAlgebra": 1,
+   "Mathlib.AlgebraicGeometry.Group": 1,
+   "Mathlib.AlgebraicGeometry.Geometrically": 1,
+   "Mathlib.FieldTheory.Minpoly": 1,
+   "Mathlib.FieldTheory.Tower": 1,
+   "Mathlib.RingTheory.AdjoinRoot": 1,
+   "Mathlib.FieldTheory.PrimitiveElement": 1,
+   "Mathlib.MeasureTheory.Constructions": 1,
+   "Mathlib.RingTheory.Nullstellensatz": 1,
+   "Mathlib.NumberTheory.Height": 1,
+   "Mathlib.RingTheory.IntegralClosure": 1,
+   "Mathlib.RingTheory.LocalProperties": 1,
+   "Mathlib.RepresentationTheory.Maschke": 1
+  },
+  "code_lines_by_area": {
+   "Mathlib": 11136871,
+   "Mathlib.RingTheory": 10105,
+   "Mathlib.Analysis": 7867,
+   "Mathlib.NumberTheory": 5537,
+   "Mathlib.LinearAlgebra": 4132,
+   "Mathlib.Topology": 3669,
+   "Mathlib.Algebra": 2316,
+   "Mathlib.AlgebraicGeometry": 1739,
+   "Mathlib.FieldTheory": 1554,
+   "Mathlib.MeasureTheory": 903,
+   "Mathlib.GroupTheory": 644,
+   "Mathlib.Data": 629,
+   "Mathlib.CategoryTheory": 295,
+   "Mathlib.Geometry": 264,
+   "Batteries.Tactic": 222,
+   "Mathlib.RepresentationTheory": 214,
+   "Mathlib.Tactic": 66,
+   "Lean": 61,
+   "Mathlib.Combinatorics": 34,
+   "Lean.Elab": 15,
+   "Lean.LibrarySuggestions": 15
+  },
+  "bare_whole_library_imports": {
+   "Mathlib": 136003,
+   "Lean": 2
+  }
+ },
+ "namespaces": [
+  {
+   "namespace": "GlobalTheory",
+   "refs": 1273684,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Formalism",
+   "refs": 837102,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "D",
+   "refs": 819648,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Development",
+   "refs": 579931,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Matrix",
+   "refs": 470163,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Finset",
+   "refs": 419235,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "X",
+   "refs": 332729,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "ReciprocityTheory",
+   "refs": 254314,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Submodule",
+   "refs": 230143,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "P",
+   "refs": 207626,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Real",
+   "refs": 195442,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Ideal",
+   "refs": 180145,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "T",
+   "refs": 176117,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "B",
+   "refs": 170780,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Module",
+   "refs": 163440,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Nat",
+   "refs": 158801,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "LinearMap",
+   "refs": 156851,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "S",
+   "refs": 156625,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Set",
+   "refs": 156412,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "G",
+   "refs": 155158,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "A",
+   "refs": 147621,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Fin",
+   "refs": 128329,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "L",
+   "refs": 127344,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Complex",
+   "refs": 117947,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "M",
+   "refs": 116238,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "I",
+   "refs": 105853,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "R",
+   "refs": 105693,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "W",
+   "refs": 100740,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Pi",
+   "refs": 100067,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Function",
+   "refs": 98861,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Units",
+   "refs": 98119,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "H",
+   "refs": 93503,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "UpperTheory",
+   "refs": 90885,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Y",
+   "refs": 90371,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Algebra",
+   "refs": 89370,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Category",
+   "refs": 88505,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Over",
+   "refs": 87220,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "GroundTheory",
+   "refs": 79828,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "RingHom",
+   "refs": 75374,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "F",
+   "refs": 70375,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "C",
+   "refs": 67310,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Subtype",
+   "refs": 63182,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "V",
+   "refs": 62006,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Fintype",
+   "refs": 60754,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "MvPolynomial",
+   "refs": 58043,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Q",
+   "refs": 54739,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Sum",
+   "refs": 52720,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "CommRingCat",
+   "refs": 50274,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "LB",
+   "refs": 49049,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "N",
+   "refs": 46795,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Polynomial",
+   "refs": 45810,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "ENNReal",
+   "refs": 45622,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "U",
+   "refs": 44169,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Finsupp",
+   "refs": 42250,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Z",
+   "refs": 39889,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "PositivityTheory",
+   "refs": 39172,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Subgroup",
+   "refs": 36116,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Scheme",
+   "refs": 36066,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "List",
+   "refs": 35059,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "PowerSeries",
+   "refs": 34224,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "MvPowerSeries",
+   "refs": 33864,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "IsLocalRing",
+   "refs": 32010,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "K",
+   "refs": 30079,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Int",
+   "refs": 29694,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Equiv",
+   "refs": 29471,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Fm",
+   "refs": 29279,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Or",
+   "refs": 27348,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Spec",
+   "refs": 27252,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "O",
+   "refs": 27023,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "J",
+   "refs": 27002,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Prod",
+   "refs": 26042,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Measure",
+   "refs": 24609,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "NumberField",
+   "refs": 23918,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "E",
+   "refs": 23839,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "CategoryTheory",
+   "refs": 23322,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "PI",
+   "refs": 22529,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "MonoidHom",
+   "refs": 21624,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Xo",
+   "refs": 20772,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "TensorProduct",
+   "refs": 20680,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Dw",
+   "refs": 20106,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Localization",
+   "refs": 19250,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Filter",
+   "refs": 18867,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Valued",
+   "refs": 18296,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "LinearEquiv",
+   "refs": 18193,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "AlgHom",
+   "refs": 17407,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Out",
+   "refs": 15828,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Metric",
+   "refs": 15824,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "ContinuousLinearMap",
+   "refs": 14836,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "IntermediateField",
+   "refs": 14738,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Multiset",
+   "refs": 14436,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "AddSubgroup",
+   "refs": 14395,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "D'",
+   "refs": 14139,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "IsLocalization",
+   "refs": 13648,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "QuotientGroup",
+   "refs": 12324,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "WithZero",
+   "refs": 12288,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Quotient",
+   "refs": 11544,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "NormedSpace",
+   "refs": 11479,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Bs",
+   "refs": 11169,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "ZMod",
+   "refs": 10813,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "TrivSqZeroExt",
+   "refs": 10647,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "IsScalarTower",
+   "refs": 10562,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "FractionalIdeal",
+   "refs": 10429,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "CompanionTheory",
+   "refs": 10397,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "IsFractionRing",
+   "refs": 9901,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Field",
+   "refs": 9775,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "PD",
+   "refs": 9661,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "MonObj",
+   "refs": 9440,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Pr",
+   "refs": 9272,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Valuation",
+   "refs": 9233,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Subring",
+   "refs": 9031,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Eq",
+   "refs": 8968,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Subsingleton",
+   "refs": 8751,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "DegPre",
+   "refs": 8708,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "A3",
+   "refs": 8677,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "LateralTheory",
+   "refs": 8558,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Subalgebra",
+   "refs": 8475,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "T'",
+   "refs": 8369,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Per",
+   "refs": 8217,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "A'",
+   "refs": 8207,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "AlgEquiv",
+   "refs": 7952,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Multiplicative",
+   "refs": 7938,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Ne",
+   "refs": 7774,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "InfinitePlace",
+   "refs": 7767,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "P'",
+   "refs": 7657,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "B'",
+   "refs": 7647,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "HeightOneSpectrum",
+   "refs": 7577,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Loc",
+   "refs": 7344,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "TaylorLogMetric",
+   "refs": 7317,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Additive",
+   "refs": 7288,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "AddMonoidHom",
+   "refs": 7282,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Ring",
+   "refs": 7046,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "GeneralLinearGroup",
+   "refs": 7000,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "SetLike",
+   "refs": 6960,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "PUnit",
+   "refs": 6946,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Fact",
+   "refs": 6845,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Iff",
+   "refs": 6801,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Sec",
+   "refs": 6702,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "AdelicGLn",
+   "refs": 6475,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Fr",
+   "refs": 6411,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "RingOfIntegers",
+   "refs": 6339,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "TF",
+   "refs": 6329,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "G'",
+   "refs": 6318,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Lev",
+   "refs": 6225,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "L'",
+   "refs": 6128,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "PadicInt",
+   "refs": 5979,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "H'",
+   "refs": 5916,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "AlgebraicGeometry",
+   "refs": 5857,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "WittVector",
+   "refs": 5750,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "IsCMField",
+   "refs": 5749,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "MulAction",
+   "refs": 5738,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "IsDedekindDomain",
+   "refs": 5689,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "MonoidAlgebra",
+   "refs": 5675,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "PiTensorProduct",
+   "refs": 5627,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "RingEquiv",
+   "refs": 5593,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Submonoid",
+   "refs": 5590,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Geo",
+   "refs": 5585,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Rep",
+   "refs": 5567,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "WeightFamilies",
+   "refs": 5565,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "QuotientAddGroup",
+   "refs": 5522,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Classical",
+   "refs": 5371,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "AddChar",
+   "refs": 5302,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "TR",
+   "refs": 5244,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "M'",
+   "refs": 5215,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "TopologicalSpace",
+   "refs": 5150,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "PrimeSpectrum",
+   "refs": 5011,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Continuous",
+   "refs": 5007,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Semifield",
+   "refs": 4964,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "CommRing",
+   "refs": 4959,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Iso",
+   "refs": 4841,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "IndefiniteRowSideFullHecke",
+   "refs": 4793,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "CrystallineSemistableComparison",
+   "refs": 4786,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "ComplexEmbedding",
+   "refs": 4737,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Bridge",
+   "refs": 4651,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "U'",
+   "refs": 4631,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Br",
+   "refs": 4568,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "IsUnit",
+   "refs": 4513,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "IsDiscreteValuationRing",
+   "refs": 4488,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Representation",
+   "refs": 4463,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "KB",
+   "refs": 4456,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "DFunLike",
+   "refs": 4448,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "IsPullback",
+   "refs": 4328,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "MA",
+   "refs": 4284,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "ValuativeRel",
+   "refs": 4214,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "CommSemiring",
+   "refs": 4186,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "S7",
+   "refs": 4137,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Functor",
+   "refs": 4134,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "S'",
+   "refs": 4127,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "DVR",
+   "refs": 4111,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "F'",
+   "refs": 4017,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "PP",
+   "refs": 4011,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "MeasureTheory",
+   "refs": 3863,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Dc",
+   "refs": 3823,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Rat",
+   "refs": 3790,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Commute",
+   "refs": 3731,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "X'",
+   "refs": 3721,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Ad3",
+   "refs": 3717,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "DivisionRing",
+   "refs": 3710,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "MulAut",
+   "refs": 3706,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "NG",
+   "refs": 3619,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Semiring",
+   "refs": 3542,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "ModuleCat",
+   "refs": 3534,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "CH",
+   "refs": 3532,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Circle",
+   "refs": 3482,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Finite",
+   "refs": 3477,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "MulEquiv",
+   "refs": 3470,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "WithLp",
+   "refs": 3426,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "IsOpenImmersion",
+   "refs": 3374,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "NNReal",
+   "refs": 3347,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Bw",
+   "refs": 3335,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Neutral",
+   "refs": 3275,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Xa",
+   "refs": 3237,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Eventually",
+   "refs": 3137,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "DV",
+   "refs": 3134,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "IsUltrametricDist",
+   "refs": 3125,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "WD",
+   "refs": 3122,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Fl",
+   "refs": 3115,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "SchwartzMap",
+   "refs": 3114,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "TC",
+   "refs": 3094,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Data",
+   "refs": 3072,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "AdjoinRoot",
+   "refs": 3052,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Dd",
+   "refs": 2987,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Tw",
+   "refs": 2903,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Dt",
+   "refs": 2899,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "WithTop",
+   "refs": 2881,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "MorphismProperty",
+   "refs": 2861,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Chart",
+   "refs": 2846,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "CechPic",
+   "refs": 2842,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Hom",
+   "refs": 2840,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "IsModuleTopology",
+   "refs": 2827,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "DoubleCoset",
+   "refs": 2744,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Ranks",
+   "refs": 2732,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "DivisionSemiring",
+   "refs": 2659,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "HMul",
+   "refs": 2635,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "DirectSum",
+   "refs": 2624,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "K'",
+   "refs": 2580,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "HeckeCharacterZeroLocus",
+   "refs": 2537,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "F0",
+   "refs": 2533,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "IrrGL",
+   "refs": 2511,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Model",
+   "refs": 2499,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "CG",
+   "refs": 2499,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "WeierstrassCurve",
+   "refs": 2465,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "NX",
+   "refs": 2454,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "KH",
+   "refs": 2415,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "LocE",
+   "refs": 2414,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "TBB",
+   "refs": 2411,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "IsAlgClosed",
+   "refs": 2407,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Derivation",
+   "refs": 2398,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "ENat",
+   "refs": 2370,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "NeZero",
+   "refs": 2366,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "AddMonoidAlgebra",
+   "refs": 2361,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "AddCommGroup",
+   "refs": 2349,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Blowup",
+   "refs": 2338,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "GL3Theta",
+   "refs": 2330,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "LL",
+   "refs": 2299,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "ConcreteCategory",
+   "refs": 2295,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Top",
+   "refs": 2285,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Sigma",
+   "refs": 2249,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Limits",
+   "refs": 2219,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "W'",
+   "refs": 2204,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "AddEquiv",
+   "refs": 2171,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Quot",
+   "refs": 2158,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "MulOpposite",
+   "refs": 2157,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Cardinal",
+   "refs": 2126,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Tf",
+   "refs": 2120,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "InfiniteAdeleRing",
+   "refs": 2111,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "HahnSeries",
+   "refs": 2111,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "C2",
+   "refs": 2101,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "EuclideanSpace",
+   "refs": 2091,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "MeasurableEquiv",
+   "refs": 2088,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "E'",
+   "refs": 2070,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Lc",
+   "refs": 2038,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Chr",
+   "refs": 2026,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "R'",
+   "refs": 2004,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "DirichletCharacter",
+   "refs": 1998,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Unitary",
+   "refs": 1972,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "LBIso",
+   "refs": 1957,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "ULift",
+   "refs": 1946,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "FunctorialResolution",
+   "refs": 1946,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "QuadraticAlgebra",
+   "refs": 1940,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Bl",
+   "refs": 1904,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "RCLike",
+   "refs": 1896,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "FD",
+   "refs": 1895,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Rl",
+   "refs": 1895,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "GLnLocal",
+   "refs": 1864,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "HomologicalComplex",
+   "refs": 1861,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Kleiman",
+   "refs": 1852,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "N'",
+   "refs": 1849,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "CochainComplex",
+   "refs": 1840,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Wd",
+   "refs": 1825,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Y'",
+   "refs": 1818,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "LocalizedModule",
+   "refs": 1808,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "V'",
+   "refs": 1802,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Opens",
+   "refs": 1783,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Dvd",
+   "refs": 1763,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "AddValuation",
+   "refs": 1763,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "IsLocallyConstant",
+   "refs": 1751,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "OfNat",
+   "refs": 1747,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "BM",
+   "refs": 1741,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "CharP",
+   "refs": 1738,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Lat",
+   "refs": 1738,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "HEq",
+   "refs": 1737,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "GG",
+   "refs": 1723,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Basis",
+   "refs": 1718,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Col",
+   "refs": 1718,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "TB",
+   "refs": 1715,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "KaehlerDifferential",
+   "refs": 1704,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Q'",
+   "refs": 1696,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "FiniteDimensional",
+   "refs": 1681,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "MaxContactCoverData",
+   "refs": 1671,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "IdeleGroup",
+   "refs": 1669,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Homeomorph",
+   "refs": 1665,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "HA",
+   "refs": 1649,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Scale",
+   "refs": 1649,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "ProjSpace",
+   "refs": 1648,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "AdicCompletion",
+   "refs": 1641,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Subfield",
+   "refs": 1627,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "TopCat",
+   "refs": 1607,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Proj",
+   "refs": 1588,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "HasCompactSupport",
+   "refs": 1569,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "LocNG",
+   "refs": 1562,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "TruncatedSeriesCountingIdentities",
+   "refs": 1529,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Order",
+   "refs": 1526,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "AA",
+   "refs": 1524,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "IsIntegral",
+   "refs": 1512,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Dat",
+   "refs": 1501,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "ShortComplex",
+   "refs": 1498,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "P5",
+   "refs": 1494,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "ValuationSubring",
+   "refs": 1483,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "IsAlgClosure",
+   "refs": 1480,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "GrpObj",
+   "refs": 1480,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Vert",
+   "refs": 1467,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Z'",
+   "refs": 1461,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Reduction",
+   "refs": 1458,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Hm",
+   "refs": 1440,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "RestrictedProduct",
+   "refs": 1439,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Reformulated",
+   "refs": 1437,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "MultilinearMap",
+   "refs": 1422,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Topology",
+   "refs": 1421,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "CohomologyClass",
+   "refs": 1413,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Summable",
+   "refs": 1412,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Cochain",
+   "refs": 1411,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Rf",
+   "refs": 1403,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Base",
+   "refs": 1400,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Pl",
+   "refs": 1397,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "PSpace",
+   "refs": 1396,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Af",
+   "refs": 1391,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Option",
+   "refs": 1388,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "QCoh",
+   "refs": 1382,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "CxPts",
+   "refs": 1381,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Bool",
+   "refs": 1364,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "MulChar",
+   "refs": 1363,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "HT",
+   "refs": 1354,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "JC",
+   "refs": 1352,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "PiLp",
+   "refs": 1349,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Datum",
+   "refs": 1341,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "FA",
+   "refs": 1339,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "SModEq",
+   "refs": 1328,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Lp",
+   "refs": 1324,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "NF",
+   "refs": 1309,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Sp",
+   "refs": 1301,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "C'",
+   "refs": 1284,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "RatModel",
+   "refs": 1281,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "CongruenceSubgroup",
+   "refs": 1280,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "SimplexCategory",
+   "refs": 1271,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Padic",
+   "refs": 1266,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "FU",
+   "refs": 1262,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "MeasurableSet",
+   "refs": 1257,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "DivisorReduction",
+   "refs": 1257,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Integrable",
+   "refs": 1246,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Small",
+   "refs": 1238,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Cube",
+   "refs": 1228,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "LocPot",
+   "refs": 1218,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Fu",
+   "refs": 1216,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "FB",
+   "refs": 1208,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "AutomorphicForm",
+   "refs": 1201,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "PB",
+   "refs": 1186,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "P0",
+   "refs": 1184,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "TT",
+   "refs": 1172,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "PreTilt",
+   "refs": 1168,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "StandardLatticesGL3",
+   "refs": 1158,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "DualNumber",
+   "refs": 1155,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Lift",
+   "refs": 1147,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "Lv",
+   "refs": 1144,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Flat",
+   "refs": 1142,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "BlowupSequenceData",
+   "refs": 1121,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "WeightAlgebra",
+   "refs": 1120,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "DD",
+   "refs": 1118,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "Re",
+   "refs": 1116,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "VB",
+   "refs": 1116,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "SecM",
+   "refs": 1114,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "IsIso",
+   "refs": 1105,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "IsIntegrallyClosed",
+   "refs": 1104,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "GDet",
+   "refs": 1100,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "ZSpan",
+   "refs": 1093,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "AllWt",
+   "refs": 1084,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "FaithfulSMul",
+   "refs": 1082,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "LinearIndependent",
+   "refs": 1080,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "H0",
+   "refs": 1079,
+   "project_defined": true,
+   "library_home": ""
+  },
+  {
+   "namespace": "HasRingHomProperty",
+   "refs": 1074,
+   "project_defined": false,
+   "library_home": ""
+  },
+  {
+   "namespace": "G0",
+   "refs": 1072,
+   "project_defined": false,
+   "library_home": ""
+  }
+ ],
+ "opens": {
+  "GlobalTheory": 497171,
+  "Formalism": 413792,
+  "ReciprocityTheory": 168313,
+  "NumberField": 94699,
+  "IsDedekindDomain": 58140,
+  "CategoryTheory": 49320,
+  "MeasureTheory": 48815,
+  "Matrix": 45008,
+  "AlgebraicGeometry": 41661,
+  "UpperTheory": 35878,
+  "Limits": 27453,
+  "Filter": 24227,
+  "MonoidalCategory": 23750,
+  "Topology": 23616,
+  "CartesianMonoidalCategory": 23383,
+  "MonObj": 23066,
+  "GroundTheory": 19540,
+  "PositivityTheory": 15042,
+  "IsLocalRing": 13343,
+  "MvPolynomial": 13118,
+  "Classical": 12652,
+  "Polynomial": 11857,
+  "TensorProduct": 8938,
+  "Finset": 7939,
+  "ValuativeRel": 7499,
+  "TopologicalSpace": 5804,
+  "Module": 5615,
+  "Complex": 3794,
+  "Opposite": 3570,
+  "Set": 3356,
+  "CrystallineSemistableComparison": 2845,
+  "CochainComplex": 2823,
+  "Neutral": 2749,
+  "PowerSeries": 2553,
+  "Ad3": 2455,
+  "PI": 1970,
+  "MvPowerSeries": 1624,
+  "LateralTheory": 1313,
+  "Metric": 1174,
+  "CompanionTheory": 1036,
+  "KaehlerDifferential": 1009,
+  "HeckeCharacterZeroLocus": 986,
+  "DividedPowers": 933,
+  "UpperHalfPlane": 919,
+  "BranchingSupport": 663,
+  "Zc": 555,
+  "ModularForm": 488,
+  "IntermediateField": 455,
+  "CongruenceSubgroup": 441,
+  "Coalgebra": 434,
+  "WithConv": 417,
+  "Bialgebra": 400,
+  "WeierstrassCurve": 396,
+  "ComplexSets": 379,
+  "ArithmeticFunction": 368,
+  "ComplexConjugate": 315,
+  "Asymptotics": 311,
+  "Function": 303,
+  "Pointwise": 295,
+  "Ideal": 291,
+  "Real": 281,
+  "DirichletCharacter": 235,
+  "MainStatements": 231,
+  "DirectSum": 218,
+  "Submodule": 169,
+  "Simplicial": 162,
+  "Representation": 159,
+  "SemidirectProduct": 159,
+  "Measure": 158,
+  "IndefiniteRowSideFullHecke": 143,
+  "WithZero": 133,
+  "QuadraticAlgebra": 132,
+  "IdeleGroup": 118,
+  "GLnLocal": 112,
+  "AutomorphicForm": 108,
+  "UniqueFactorizationMonoid": 107,
+  "WittVector": 105,
+  "NormedSpace": 95,
+  "Cardinal": 93,
+  "MulAction": 88,
+  "TrivSqZeroExt": 87,
+  "Loc": 87,
+  "Iwasawa": 83,
+  "FiniteSubfield": 79,
+  "IsDiscreteValuationRing": 78,
+  "DoubleCoset": 71,
+  "DiscreteGroups": 70,
+  "ComplexOrder": 70,
+  "FockH1Action": 67,
+  "Laurent": 67,
+  "Pb": 66,
+  "Finsupp": 64,
+  "SchwartzMap": 63,
+  "FinHolAtlas": 62,
+  "Semi": 62,
+  "UniformSpace": 61,
+  "Reduction": 61,
+  "ProjLine": 59,
+  "Algebra": 58,
+  "ComplexAt": 58,
+  "AddMonoidAlgebra": 56,
+  "Equiv": 53,
+  "InnerProductSpace": 53,
+  "Sa2": 53,
+  "InfinitePlace": 52,
+  "RingTheory": 51,
+  "PeriodPair": 51,
+  "FourierTransform": 50,
+  "FractionalIdeal": 46,
+  "PartialDerivEval": 44,
+  "FunctorialResolution": 41,
+  "EisensteinSeries": 41,
+  "RightCosetSpace": 40,
+  "HomogeneousLocalization": 40,
+  "SemiLocal": 40,
+  "HT": 39,
+  "Cx": 39,
+  "WeightedAtlas": 38,
+  "Abelian": 37,
+  "Parabolic": 35,
+  "MonoidAlgebra": 35,
+  "BpJoin": 35,
+  "AdelicGLn": 34,
+  "PIW": 34,
+  "ContinuousLinearMap": 33,
+  "HcS": 33,
+  "DeRhamPotentiallySemistable": 32,
+  "ProjSpace": 32,
+  "OnePoint": 32,
+  "LineDeriv": 31,
+  "GaussianPlane": 31,
+  "CechPic": 30,
+  "Out": 29,
+  "Reformulated": 29,
+  "CuspidalSpectrum": 29,
+  "ZetaZeros": 29,
+  "HeckeAlgebra": 28,
+  "AdeleBaseChange": 28,
+  "ModularFormClass": 28,
+  "BoundedContinuousFunction": 27,
+  "SiegelEisensteinSeries": 26,
+  "Scheme": 26,
+  "AlgebraicTopology": 26,
+  "PDiv": 26,
+  "Comb": 26,
+  "PAlg": 25,
+  "CommPairing": 25,
+  "LocE": 25,
+  "LinearMap": 24,
+  "Deduction": 24
+ },
+ "usage_by_library_area": {},
+ "keywords": {
+  "Theta lifts / theta correspondence": {
+   "branch": "Automorphic forms",
+   "files": 651,
+   "hits": 1260,
+   "code_lines": 26508
+  },
+  "Weil representation": {
+   "branch": "Automorphic forms",
+   "files": 1848,
+   "hits": 2473,
+   "code_lines": 66321
+  },
+  "Seesaw identity": {
+   "branch": "Automorphic forms",
+   "files": 767,
+   "hits": 1725,
+   "code_lines": 74000
+  },
+  "Gan-Gross-Prasad / Bessel periods": {
+   "branch": "Automorphic forms",
+   "files": 354,
+   "hits": 1044,
+   "code_lines": 17099
+  },
+  "Relative trace formula": {
+   "branch": "Automorphic forms",
+   "files": 1850,
+   "hits": 4558,
+   "code_lines": 99097
+  },
+  "Poincare series": {
+   "branch": "Automorphic forms",
+   "files": 80,
+   "hits": 187,
+   "code_lines": 8235
+  },
+  "Covering groups (metaplectic)": {
+   "branch": "Automorphic forms",
+   "files": 237,
+   "hits": 385,
+   "code_lines": 4990
+  },
+  "Unitary groups / automorphic reps": {
+   "branch": "Automorphic forms",
+   "files": 53370,
+   "hits": 203018,
+   "code_lines": 3429474
+  },
+  "Hecke characters": {
+   "branch": "Automorphic forms",
+   "files": 3335,
+   "hits": 7583,
+   "code_lines": 170353
+  },
+  "Explicit formula / Weil positivity": {
+   "branch": "Analytic number theory",
+   "files": 108,
+   "hits": 219,
+   "code_lines": 4575
+  },
+  "von Mangoldt sums": {
+   "branch": "Analytic number theory",
+   "files": 233,
+   "hits": 1211,
+   "code_lines": 22575
+  },
+  "Stepanov / auxiliary determinants": {
+   "branch": "Analytic number theory",
+   "files": 0,
+   "hits": 0,
+   "code_lines": 0
+  },
+  "Zeta and L-functions": {
+   "branch": "Analytic number theory",
+   "files": 1690,
+   "hits": 12289,
+   "code_lines": 158810
+  },
+  "Gauss sums": {
+   "branch": "Analytic number theory",
+   "files": 429,
+   "hits": 1156,
+   "code_lines": 36156
+  },
+  "Turan power sums": {
+   "branch": "Analytic number theory",
+   "files": 11,
+   "hits": 48,
+   "code_lines": 856
+  },
+  "Complex multiplication": {
+   "branch": "CM & Arakelov",
+   "files": 1523,
+   "hits": 3882,
+   "code_lines": 132442
+  },
+  "Chowla-Selberg / periods": {
+   "branch": "CM & Arakelov",
+   "files": 274,
+   "hits": 1027,
+   "code_lines": 11826
+  },
+  "Theta functions": {
+   "branch": "CM & Arakelov",
+   "files": 1378,
+   "hits": 2684,
+   "code_lines": 95433
+  },
+  "Arakelov / Bost slopes": {
+   "branch": "CM & Arakelov",
+   "files": 2219,
+   "hits": 3708,
+   "code_lines": 195969
+  },
+  "Iwasawa towers": {
+   "branch": "Iwasawa & K-theory",
+   "files": 14585,
+   "hits": 30648,
+   "code_lines": 888937
+  },
+  "Vandiver": {
+   "branch": "Iwasawa & K-theory",
+   "files": 1431,
+   "hits": 3475,
+   "code_lines": 65222
+  },
+  "K-theory / Lichtenbaum": {
+   "branch": "Iwasawa & K-theory",
+   "files": 223,
+   "hits": 447,
+   "code_lines": 7923
+  },
+  "Galois cohomology / class groups": {
+   "branch": "Iwasawa & K-theory",
+   "files": 5584,
+   "hits": 12484,
+   "code_lines": 270793
+  },
+  "Siegel mass formula": {
+   "branch": "Lattices & forms",
+   "files": 4421,
+   "hits": 10208,
+   "code_lines": 207948
+  },
+  "Quadratic / hermitian forms": {
+   "branch": "Lattices & forms",
+   "files": 1949,
+   "hits": 3106,
+   "code_lines": 134575
+  },
+  "Lattices and covolumes": {
+   "branch": "Lattices & forms",
+   "files": 768,
+   "hits": 3442,
+   "code_lines": 95005
+  },
+  "Weil / Deligne": {
+   "branch": "Geometry over Fq",
+   "files": 2776,
+   "hits": 4312,
+   "code_lines": 70659
+  },
+  "Katz / exponential sums": {
+   "branch": "Geometry over Fq",
+   "files": 755,
+   "hits": 1920,
+   "code_lines": 35390
+  },
+  "Etale cohomology / Bertini": {
+   "branch": "Geometry over Fq",
+   "files": 11770,
+   "hits": 45336,
+   "code_lines": 991589
+  },
+  "Fourier / Parseval / Plancherel": {
+   "branch": "Fourier analysis",
+   "files": 7784,
+   "hits": 49757,
+   "code_lines": 805310
+  },
+  "Cauchy-Schwarz / test functions": {
+   "branch": "Fourier analysis",
+   "files": 1970,
+   "hits": 6720,
+   "code_lines": 151874
+  },
+  "Pigeonhole / Behrend": {
+   "branch": "Combinatorics",
+   "files": 26,
+   "hits": 156,
+   "code_lines": 3709
+  },
+  "Random matrices / Mehta": {
+   "branch": "Combinatorics",
+   "files": 0,
+   "hits": 0,
+   "code_lines": 0
+  }
+ },
+ "branches": {
+  "Automorphic forms": {
+   "share": 47.0,
+   "code_lines": 3896077,
+   "hits": 222233
+  },
+  "Iwasawa & K-theory": {
+   "share": 14.9,
+   "code_lines": 1232874,
+   "hits": 47054
+  },
+  "Geometry over Fq": {
+   "share": 13.3,
+   "code_lines": 1097637,
+   "hits": 51568
+  },
+  "Fourier analysis": {
+   "share": 11.6,
+   "code_lines": 957184,
+   "hits": 56477
+  },
+  "Lattices & forms": {
+   "share": 5.3,
+   "code_lines": 437529,
+   "hits": 16756
+  },
+  "CM & Arakelov": {
+   "share": 5.3,
+   "code_lines": 435671,
+   "hits": 11301
+  },
+  "Analytic number theory": {
+   "share": 2.7,
+   "code_lines": 222971,
+   "hits": 14923
+  },
+  "Combinatorics": {
+   "share": 0.0,
+   "code_lines": 3709,
+   "hits": 156
+  }
+ },
+ "dated_comment_lines": []
+}

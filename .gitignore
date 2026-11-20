@@ -1,0 +1,10 @@
+# The Lean archive and its extraction are someone else's work and ~1.6 GB: never commit them
+lean_parts/
+lean_src/
+# uncompressed copies of the large outputs (the .gz versions are committed)
+census_out/files.csv
+census_out/branch_perfile.jsonl
+# build intermediates
+social/_*.html
+__pycache__/
+*.pyc
